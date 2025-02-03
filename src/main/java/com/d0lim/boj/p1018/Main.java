@@ -19,18 +19,7 @@ public class Main {
                     }
                     latest = !latest;
                 }
-                result = Math.min(result, count);
-
-                count = 0;
-                latest = !board[i][j];
-                for (int k = 0; k < 8; k++) {
-                    for (int l = 0; l < 8; l++) {
-                        if (board[i + k][j + l] != latest) count++;
-                        latest = !latest;
-                    }
-                    latest = !latest;
-                }
-                result = Math.min(result, count);
+                result = Math.min(Math.min(result, count), 64 - count);
             }
         }
 
